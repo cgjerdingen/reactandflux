@@ -30818,7 +30818,60 @@ arguments[4][29][0].apply(exports,arguments)
 },{"dup":29}],213:[function(require,module,exports){
 arguments[4][30][0].apply(exports,arguments)
 },{"./lib/React":186,"dup":30}],214:[function(require,module,exports){
-//"use strict";
+"use strict";
+
+var React = require('react');
+var About = React.createClass({displayName: "About",
+	render: function() {
+		return(
+			React.createElement("div", null, 
+				React.createElement("h1", null, "About"), 
+				React.createElement("p", null, 
+					"This application used the following technologies:", 
+					React.createElement("ul", null, 
+						React.createElement("li", null, "React"), 
+						React.createElement("li", null, "React Router"), 
+						React.createElement("li", null, "Flux"), 
+						React.createElement("li", null, "Node"), 
+						React.createElement("li", null, "Gulp"), 
+						React.createElement("li", null, "Browserify"), 
+						React.createElement("li", null, "Bootstrap"), 
+						React.createElement("li", null, "jQuery")
+					)
+				)
+			)
+			);
+	}
+
+});
+
+module.exports = About;
+},{"react":213}],215:[function(require,module,exports){
+"use strict";
+
+var React = require('react');
+
+var Header = React.createClass({displayName: "Header",
+	render: function() {
+		return(
+			React.createElement("nav", {className: "navbar navbar-default"}, 
+				React.createElement("div", {className: "container-fluid"}, 
+					React.createElement("a", {href: "/", className: "navbar-brand"}, 
+						React.createElement("img", {src: "images/logo.png"})
+					), 
+					React.createElement("ul", {className: "nav navbar-nav"}, 
+						React.createElement("li", null, React.createElement("a", {href: "/"}, "Home")), 
+						React.createElement("li", null, React.createElement("a", {href: "/#about"}, "About"))
+					)
+				)
+			)
+		);
+	}
+});
+
+module.exports = Header;
+},{"react":213}],216:[function(require,module,exports){
+"use strict";
 
 var React = require('React');
 
@@ -30831,13 +30884,41 @@ var Home = React.createClass({displayName: "Home",
 });
 
 module.exports = Home;
-},{"React":30}],215:[function(require,module,exports){
+},{"React":30}],217:[function(require,module,exports){
 $ = jQuery = require('jquery');
 var React = require('react');
 var ReactDOM = require('react-dom');
 //var test = 'testing';
+var Header = require('./components/common/header');
 var Home = require('./components/homePage');
+var About = require('./Components/about/aboutPage');
 
+var App = React.createClass({displayName: "App",
+	render: function(){
+		var Child;
+
+		switch(this.props.route) {
+			case 'about': Child = About; break;
+			default: Child = Home;
+		}
+
+		return (
+			React.createElement("div", null, 
+				React.createElement(Header, null), 
+				React.createElement(Child, null)
+			)
+		);
+	}
+});
+
+function render() {
+	var route = window.location.hash.substr(1);
+	ReactDOM.render(React.createElement(App, {route: route}),document.getElementById('app'));
+}
+
+
+window.addEventListener('hashchange', render);
+render();
 
 //var Home = React.createClass({
 //	render: function() {
@@ -30848,11 +30929,11 @@ var Home = require('./components/homePage');
 //});
 
 
-ReactDOM.render(React.createElement(Home, null), document.getElementById('app'));
+//ReactDOM.render(<Home />, document.getElementById('app'));
 
 
 
 //var App = console.log('Hello world from Browserify');
 
 //module.exports = App;
-},{"./components/homePage":214,"jquery":32,"react":213,"react-dom":33}]},{},[215]);
+},{"./Components/about/aboutPage":214,"./components/common/header":215,"./components/homePage":216,"jquery":32,"react":213,"react-dom":33}]},{},[217]);
