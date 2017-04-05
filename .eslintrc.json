@@ -20,7 +20,7 @@
 		"no-trailing-spaces": "warn",
 		"eol-last": "warn",
 		"no-unused-vars": "warn",
-		"no-underscore-dangle": "warn",
+		//"no-underscore-dangle": "warn",
 		"no-lone-blocks": "warn",
 		"no-undef": "warn",
 		"semi": "warn",

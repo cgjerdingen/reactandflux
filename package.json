@@ -9,8 +9,10 @@
   "author": "Craig Gjerdingen",
   "license": "ISC",
   "dependencies": {
+    "ansi-styles": "^3.0.0",
     "bootstrap": "^3.3.7",
     "browserify": "^14.1.0",
+    "chalk": "^1.1.3",
     "flux": "^3.1.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
@@ -18,10 +20,12 @@
     "gulp-eslint": "^3.0.1",
     "gulp-open": "^2.0.0",
     "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^4.0.0",
     "reactify": "^1.1.1",
+    "supports-color": "^3.2.3",
     "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {

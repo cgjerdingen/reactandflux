@@ -5,13 +5,17 @@ var ReactDOM = require('react-dom');
 var Header = require('./components/common/header');
 var Home = require('./components/homePage');
 var About = require('./Components/about/aboutPage');
+var Authors = require('./Components/authors/authorPage');
 
+(function(win) {
+	"use strict";
 var App = React.createClass({
 	render: function(){
 		var Child;
 
 		switch(this.props.route) {
 			case 'about': Child = About; break;
+			case 'authors': Child = Authors; break;
 			default: Child = Home;
 		}
 
@@ -25,12 +29,12 @@ var App = React.createClass({
 });
 
 function render() {
-	var route = window.location.hash.substr(1);
+	var route = win.location.hash.substr(1);
 	ReactDOM.render(<App route={route} />,document.getElementById('app'));
 }
 
 
-window.addEventListener('hashchange', render);
+win.addEventListener('hashchange', render);
 render();
 
 //var Home = React.createClass({
@@ -50,6 +54,6 @@ render();
 
 //module.exports = App;
 
-
+})(window);
 
 
