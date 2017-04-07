@@ -33,9 +33,12 @@ function render() {
 	ReactDOM.render(<App route={route} />,document.getElementById('app'));
 }
 
-
+//javascript iife pattern/expression
 win.addEventListener('hashchange', render);
 render();
+
+})(window);
+
 
 //var Home = React.createClass({
 //	render: function() {
@@ -53,7 +56,3 @@ render();
 //var App = console.log('Hello world from Browserify');
 
 //module.exports = App;
-
-})(window);
-
-
