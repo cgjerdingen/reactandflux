@@ -10,6 +10,7 @@
 #.Trashes
 
 node_modules/
+exercise_files/
 npm-debug.log*
 debug.log*
 

@@ -1,36 +1,28 @@
 {
-  "name": "reactandflux",
+  "name": "psadmin",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Craig Gjerdingen",
+  "author": "Cory House",
   "license": "ISC",
   "dependencies": {
-    "ansi-styles": "^3.0.0",
-    "bootstrap": "^3.3.7",
-    "browserify": "^14.1.0",
-    "chalk": "^1.1.3",
-    "flux": "^3.1.2",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.0.0",
-    "gulp-eslint": "^3.0.1",
-    "gulp-open": "^2.0.0",
-    "jquery": "^3.2.1",
-    "lodash": "^4.17.4",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-router": "^4.0.0",
+    "bootstrap": "^3.3.5",
+    "browserify": "^11.0.1",
+    "flux": "^2.0.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-eslint": "^0.15.0",
+    "gulp-open": "^1.0.0",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.0",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
     "reactify": "^1.1.1",
-    "supports-color": "^3.2.3",
+    "toastr": "^2.1.0",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^7.2.1",
-    "eslint": "^3.19.0",
-    "eslint-plugin-react": "^6.10.3"
   }
 }
